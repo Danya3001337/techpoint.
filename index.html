@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TechPoint — сервисный центр по ремонту техники">
+  <title>TechPoint — сервисный центр</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="logo">TECH<span>POINT</span></a>
+
+    <button class="menu-toggle" aria-label="Открыть меню" aria-expanded="false">
+      ☰
+    </button>
+
+    <nav class="navigation">
+      <a href="#home">Главная</a>
+      <a href="#services">Услуги</a>
+      <a href="#about">О нас</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <a href="#request" class="header-button">Оставить заявку</a>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="subtitle">СЕРВИСНЫЙ ЦЕНТР НОВОГО ПОКОЛЕНИЯ</p>
+
+        <h1>Возвращаем технику <span>к жизни</span></h1>
+
+        <p class="description">
+          Профессиональный ремонт компьютеров, ноутбуков и смартфонов.
+          Быстро, качественно и с гарантией на выполненные работы.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#request" class="button primary">Заказать ремонт ↗</a>
+          <a href="#services" class="button secondary">Наши услуги</a>
+        </div>
+
+        <div class="hero-info">
+          <div>
+            <strong>01</strong>
+            <span>Точная диагностика</span>
+          </div>
+          <div>
+            <strong>02</strong>
+            <span>Прозрачная стоимость</span>
+          </div>
+          <div>
+            <strong>03</strong>
+            <span>Гарантия на работы</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="circle circle-one"></div>
+        <div class="circle circle-two"></div>
+
+        <div class="tech-card">
+          <div class="tech-card-top">
+            <span></span><span></span><span></span>
+          </div>
+
+          <div class="tech-symbol">✳</div>
+          <p>SYSTEM RESTORED</p>
+          <div class="loading-line"><span></span></div>
+        </div>
+
+        <div class="floating-card">
+          <span class="check-icon">✓</span>
+          <div>
+            <strong>Техника исправна</strong>
+            <small>Результат под контролем</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services section" id="services">
+      <div class="section-heading">
+        <p class="subtitle">ЧЕМ МЫ ПОМОЖЕМ</p>
+        <h2>Наши <span>услуги</span></h2>
+        <p>Подберём решение для вашей техники и объясним каждый этап ремонта.</p>
+      </div>
+
+      <div class="service-grid">
+        <article class="service-card">
+          <div class="service-icon">▣</div>
+          <p class="service-number">01 / COMPUTERS</p>
+          <h3>Компьютеры</h3>
+          <p>Диагностика, сборка ПК, замена комплектующих и устранение неисправностей.</p>
+          <a href="#request">Оставить заявку ↗</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">▱</div>
+          <p class="service-number">02 / LAPTOPS</p>
+          <h3>Ноутбуки</h3>
+          <p>Чистка, замена аккумулятора, ремонт клавиатуры и системы охлаждения.</p>
+          <a href="#request">Оставить заявку ↗</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">▯</div>
+          <p class="service-number">03 / SMARTPHONES</p>
+          <h3>Смартфоны</h3>
+          <p>Замена экрана и батареи, настройка программ и устранение сбоев.</p>
+          <a href="#request">Оставить заявку ↗</a>
+        </article>
+
+        <article class="service-card">
+          <div class="service-icon">⌘</div>
+          <p class="service-number">04 / SOFTWARE</p>
+          <h3>Программы</h3>
+          <p>Установка операционной системы, настройка программ и защита данных.</p>
+          <a href="#request">Оставить заявку ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="about section" id="about">
+      <div class="section-heading">
+        <p class="subtitle">ПОЧЕМУ TECHPOINT</p>
+        <h2>Сервис, которому <span>можно доверять</span></h2>
+      </div>
+
+      <div class="about-grid">
+        <article class="about-card">
+          <strong>01</strong>
+          <h3>Понятная диагностика</h3>
+          <p>Объясняем причину неисправности и предлагаем варианты решения.</p>
+        </article>
+
+        <article class="about-card">
+          <strong>02</strong>
+          <h3>Согласование цены</h3>
+          <p>Обсуждаем стоимость до начала ремонта, без неожиданных расходов.</p>
+        </article>
+
+        <article class="about-card">
+          <strong>03</strong>
+          <h3>Проверка результата</h3>
+          <p>Проверяем работоспособность устройства после выполнения работ.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="request section" id="request">
+      <div class="request-content">
+        <p class="subtitle">ОСТАВЬТЕ ЗАЯВКУ</p>
+        <h2>Начнём с <span>диагностики?</span></h2>
+        <p>Заполните форму, чтобы сообщить о неисправности устройства.</p>
+      </div>
+
+      <form id="request-form" class="request-form">
+        <label for="client-name">Ваше имя</label>
+        <input id="client-name" name="name" type="text"
+               placeholder="Введите имя" required minlength="2">
+
+        <label for="client-phone">Номер телефона</label>
+        <input id="client-phone" name="phone" type="tel"
+               placeholder="+7 900 000-00-00" required>
+
+        <label for="device">Тип устройства</label>
+        <select id="device" name="device" required>
+          <option value="">Выберите устройство</option>
+          <option value="Компьютер">Компьютер</option>
+          <option value="Ноутбук">Ноутбук</option>
+          <option value="Смартфон">Смартфон</option>
+          <option value="Другое">Другое</option>
+        </select>
+
+        <label for="problem">Описание проблемы</label>
+        <textarea id="problem" name="problem"
+                  placeholder="Что произошло с устройством?"></textarea>
+
+        <button type="submit" class="button primary">
+          Отправить заявку ↗
+        </button>
+
+        <p id="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="contacts section" id="contacts">
+      <div class="section-heading">
+        <p class="subtitle">БУДЕМ НА СВЯЗИ</p>
+        <h2>Наши <span>контакты</span></h2>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <span>ТЕЛЕФОН</span>
+          <p>+7 900 000-00-00</p>
+        </div>
+        <div class="contact-item">
+          <span>ЭЛЕКТРОННАЯ ПОЧТА</span>
+          <p>info@techpoint.example</p>
+        </div>
+        <div class="contact-item">
+          <span>АДРЕС</span>
+          <p>г. Ваш город, ул. Примерная, 10</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a href="#home" class="logo">TECH<span>POINT</span></a>
+    <p>© <span id="year">2026</span> TechPoint. Учебный проект.</p>
+    <a href="#home">Наверх ↑</a>
+  </footer>
+</body>
+</html>

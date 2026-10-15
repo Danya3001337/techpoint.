@@ -1,0 +1,676 @@
+
+/* 1. Основные настройки */
+:root {
+  --bg: #080c14;
+  --panel: #111a28;
+  --text: #f4f7fb;
+  --muted: #9ba9bb;
+  --accent: #53e0ff;
+  --border: rgba(150, 190, 220, 0.16);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, textarea, select {
+  font: inherit;
+}
+
+/* 2. Верхнее меню */
+.header {
+  min-height: 82px;
+  padding: 18px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(8, 12, 20, 0.94);
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.navigation {
+  display: flex;
+  gap: 28px;
+}
+
+.navigation a {
+  color: var(--muted);
+  font-size: 13px;
+  transition: color 0.3s;
+}
+
+.navigation a:hover {
+  color: var(--accent);
+}
+
+.header-button {
+  padding: 11px 17px;
+  background: var(--accent);
+  color: #061019;
+  border-radius: 7px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.header-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 25px #53e04430;
+}
+
+.menu-toggle {
+  display: none;
+  padding: 8px 12px;
+  color: var(--accent);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  cursor: pointer;
+}
+
+/* 3. Главный экран */
+.hero {
+  min-height: 570px;
+  padding: 75px 7%;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 35px;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 80% 40%,
+    #0d45602b, transparent 55%);
+}
+
+.subtitle {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero h1 {
+  max-width: 650px;
+  margin-bottom: 22px;
+  font-size: clamp(42px, 5vw, 68px);
+  line-height: 1.12;
+  letter-spacing: -2px;
+}
+
+.hero h1 span,
+.section-heading h2 span,
+.request h2 span {
+  color: var(--accent);
+}
+
+.description {
+  max-width: 510px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 14px 20px;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.25s, background 0.25s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+}
+
+.primary {
+  background: var(--accent);
+  color: #061019;
+}
+
+.primary:hover {
+  background: #a2efff;
+}
+
+.secondary {
+  border-color: var(--border);
+  color: var(--text);
+}
+
+.secondary:hover {
+  border-color: var(--accent);
+}
+
+/* 4. Информация на главном экране */
+.hero-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.hero-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.hero-info strong {
+  color: var(--accent);
+  font-size: 23px;
+}
+
+.hero-info span {
+  color: var(--muted);
+  font-size: 10px;
+}
+
+/* 5. Декоративная иллюстрация */
+.hero-visual {
+  min-height: 350px;
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+
+.circle {
+  position: absolute;
+  width: 310px;
+  height: 310px;
+  border: 1px solid #53e0ff30;
+  border-radius: 50%;
+  animation: rotate 25s linear infinite;
+}
+
+.circle-two {
+  width: 240px;
+  height: 240px;
+  border-style: dashed;
+  animation-direction: reverse;
+}
+
+.tech-card {
+  z-index: 1;
+  width: min(330px, 85%);
+  min-height: 245px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #53e0ff55;
+  border-radius: 15px;
+  background: linear-gradient(145deg, #15283b, #0b111c);
+  box-shadow: 0 0 60px #00cfff17;
+  animation: float 5s ease-in-out infinite;
+}
+
+.tech-card-top {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  gap: 5px;
+}
+
+.tech-card-top span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.tech-symbol {
+  color: var(--accent);
+  font-size: 85px;
+  text-shadow: 0 0 35px #53e0ff90;
+}
+
+.tech-card > p {
+  color: var(--accent);
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+.loading-line {
+  width: 100px;
+  height: 3px;
+  margin-top: 17px;
+  overflow: hidden;
+  background: #ffffff15;
+}
+
+.loading-line span {
+  display: block;
+  width: 60%;
+  height: 100%;
+  background: var(--accent);
+  animation: loading 2s ease-in-out infinite alternate;
+}
+
+.floating-card {
+  position: absolute;
+  right: -5px;
+  bottom: 35px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #111a28;
+  animation: float 4s ease-in-out infinite;
+}
+
+.check-icon {
+  color: var(--accent);
+  font-size: 25px;
+}
+
+.floating-card strong,
+.floating-card small {
+  display: block;
+}
+
+.floating-card strong {
+  font-size: 10px;
+}
+
+.floating-card small {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 9px;
+}
+
+/* 6. Общие настройки секций */
+.section {
+  padding: 95px 7%;
+}
+
+.section-heading {
+  max-width: 650px;
+  margin-bottom: 35px;
+}
+
+.section-heading h2,
+.request h2 {
+  margin-bottom: 14px;
+  font-size: clamp(30px, 4vw, 43px);
+  line-height: 1.2;
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+/* 7. Карточки услуг */
+.services {
+  border-top: 1px solid var(--border);
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.service-card,
+.about-card {
+  padding: 23px 19px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(145deg, #121d2c, #0b111b);
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.service-card:hover,
+.about-card:hover {
+  transform: translateY(-6px);
+  border-color: #53e0ff80;
+}
+
+.service-icon {
+  margin-bottom: 20px;
+  color: var(--accent);
+  font-size: 34px;
+}
+
+.service-number {
+  margin-bottom: 8px;
+  color: #7e91a8;
+  font-size: 9px;
+  letter-spacing: 1px;
+}
+
+.service-card h3,
+.about-card h3 {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.service-card > p:not(.service-number),
+.about-card p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+.service-card > a {
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: bold;
+}
+
+/* 8. Преимущества */
+.about {
+  background: #0b1019;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.about-card strong {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--accent);
+  font-size: 25px;
+}
+
+/* 9. Форма заявки */
+.request {
+  display: grid;
+  grid-template-columns: 1fr 0.9fr;
+  gap: 45px;
+  align-items: start;
+}
+
+.request-content > p:last-child {
+  max-width: 380px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.request-form {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.request-form label {
+  margin-top: 8px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.request-form input,
+.request-form select,
+.request-form textarea {
+  width: 100%;
+  padding: 13px;
+  color: var(--text);
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  outline: none;
+  font-size: 12px;
+}
+
+.request-form input:focus,
+.request-form select:focus,
+.request-form textarea:focus {
+  border-color: var(--accent);
+}
+
+.request-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.request-form select option {
+  background: var(--panel);
+}
+
+.request-form .button {
+  margin-top: 10px;
+}
+
+#form-message {
+  color: var(--accent);
+  font-size: 12px;
+}
+
+/* 10. Контактная информация */
+.contacts {
+  background: #0b1019;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.contact-item {
+  padding: 23px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--panel);
+}
+
+.contact-item span {
+  color: var(--accent);
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.contact-item p {
+  margin-top: 12px;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
+/* 11. Нижняя часть сайта */
+.footer {
+  min-height: 85px;
+  padding: 22px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.footer p,
+.footer > a:last-child {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.footer > a:last-child:hover {
+  color: var(--accent);
+}
+
+/* 12. Анимации */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes loading {
+  from {
+    width: 15%;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* 13. Адаптация для планшетов */
+@media (max-width: 1000px) {
+  .header {
+    padding-inline: 4%;
+    gap: 15px;
+  }
+
+  .navigation {
+    gap: 14px;
+  }
+
+  .navigation a {
+    font-size: 11px;
+  }
+
+  .hero,
+  .section {
+    padding-inline: 5%;
+  }
+
+  .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* 14. Адаптация для телефонов */
+@media (max-width: 700px) {
+  .header {
+    position: relative;
+    flex-wrap: wrap;
+    padding: 16px 5%;
+  }
+
+  .menu-toggle {
+    display: block;
+    margin-left: auto;
+  }
+
+  .header-button {
+    display: none;
+  }
+
+  .navigation {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .navigation a {
+    padding: 11px 0;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  .hero {
+    grid-template-columns: 1fr;
+    padding-top: 55px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .hero-visual {
+    min-height: 330px;
+  }
+
+  .section {
+    padding-top: 65px;
+    padding-bottom: 65px;
+  }
+
+  .about-grid,
+  .contact-grid,
+  .request {
+    grid-template-columns: 1fr;
+  }
+
+  .request {
+    gap: 25px;
+  }
+
+  .footer {
+    flex-wrap: wrap;
+  }
+
+  .footer p {
+    order: 3;
+    width: 100%;
+  }
+}
+
+/* Учитываем настройку пользователя
+   на уменьшение движения */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,71 @@
+
+const menuToggle = document.querySelector(".menu-toggle");
+const navigation = document.querySelector(".navigation");
+const requestForm = document.querySelector("#request-form");
+const formMessage = document.querySelector("#form-message");
+const yearElement = document.querySelector("#year");
+
+// Автоматически обновляем год внизу сайта
+if (yearElement) {
+  yearElement.textContent = new Date().getFullYear();
+}
+
+// Открываем и закрываем мобильное меню
+if (menuToggle && navigation) {
+  menuToggle.addEventListener("click", () => {
+    const isOpen = navigation.classList.toggle("open");
+
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+    menuToggle.setAttribute(
+      "aria-label",
+      isOpen ? "Закрыть меню" : "Открыть меню"
+    );
+    menuToggle.textContent = isOpen ? "✕" : "☰";
+  });
+
+  // Закрываем меню после перехода по ссылке
+  navigation.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      navigation.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.setAttribute("aria-label", "Открыть меню");
+      menuToggle.textContent = "☰";
+    });
+  });
+}
+
+// Проверяем форму заявки
+if (requestForm && formMessage) {
+  requestForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.querySelector("#client-name").value.trim();
+    const phone = document.querySelector("#client-phone").value.trim();
+    const device = document.querySelector("#device").value;
+
+    if (name.length < 2) {
+      formMessage.textContent =
+        "Введите имя длиной не менее двух символов.";
+      return;
+    }
+
+    const digits = phone.replace(/\D/g, "");
+
+    if (digits.length < 10 || digits.length > 15) {
+      formMessage.textContent =
+        "Проверьте номер телефона и попробуйте снова.";
+      return;
+    }
+
+    if (!device) {
+      formMessage.textContent =
+        "Пожалуйста, выберите тип устройства.";
+      return;
+    }
+
+    formMessage.textContent =
+      "Проверка пройдена! Это демонстрационная форма: заявка пока не отправлена. Для реальной отправки нужно подключить сервер.";
+
+    requestForm.reset();
+  });
+}
